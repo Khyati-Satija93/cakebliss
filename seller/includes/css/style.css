@@ -1,0 +1,638 @@
+/* --- ENCHANTED THEME ROOT --- */
+:root {
+    --deep-purple: #0f081d;
+    --electric-lavender: #9d50bb;
+    --neon-magenta: #ff00ff;
+    --shimmer-silver: #C0C0C0;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --sidebar-width: 250px;
+}
+
+body {
+    background-color: var(--deep-purple);
+    color: var(--shimmer-silver);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- SIDEBAR CUSTOMIZATION --- */
+.sidebar {
+    background: rgba(15, 8, 29, 0.95);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-glass);
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+}
+
+.sidebar h3 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.sidebar .nav-link {
+    color: var(--shimmer-silver);
+    padding: 12px 20px;
+    margin: 4px 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.sidebar .nav-link i {
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.sidebar .nav-link:hover {
+    background: rgba(157, 80, 187, 0.1);
+    color: var(--electric-lavender);
+}
+
+.sidebar .nav-link.active {
+    background: var(--electric-lavender);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(157, 80, 187, 0.4);
+}
+
+/* --- TOP NAVBAR --- */
+.top-navbar {
+    height: 70px;
+    background: rgba(15, 8, 29, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile & Notification Triggers */
+.profile-trigger, .notification-btn {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    color: white;
+    border-radius: 12px;
+    padding: 8px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.profile-trigger:hover, .notification-btn:hover {
+    border-color: var(--electric-lavender);
+}
+
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.pulse-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background: var(--neon-magenta);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+/* --- DROPDOWNS --- */
+.dropdown-menu {
+    background: var(--deep-purple) !important;
+    border: 1px solid var(--border-glass) !important;
+    backdrop-filter: blur(20px);
+}
+
+.dropdown-item {
+    color: var(--shimmer-silver) !important;
+}
+
+.dropdown-item:hover {
+    background: rgba(157, 80, 187, 0.1) !important;
+    color: var(--electric-lavender) !important;
+}
+
+/* --- MAIN CONTENT AREA --- */
+/* --- DASHBOARD SPECIFIC OVERRIDES --- */
+
+/* Main Background Fix */
+.main-content {
+    background-color: var(--deep-purple);
+    min-height: 100vh;
+}
+
+/* Typography */
+h1.display-6 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* --- STAT CARDS --- */
+.card-stat {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card-stat:hover {
+    transform: translateY(-5px);
+    border-color: var(--electric-lavender);
+    box-shadow: 0 10px 25px rgba(157, 80, 187, 0.2);
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    /* We override the inline styles slightly for better glow */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.card-stat h2 {
+    color: white;
+    letter-spacing: -1px;
+}
+
+/* --- ARTISAN TABLE CARD --- */
+.card-artisan {
+    background: var(--glass) !important;
+    border: 1px solid var(--border-glass) !important;
+    backdrop-filter: blur(15px);
+}
+
+.card-artisan .p-4.border-bottom {
+    border-bottom: 1px solid var(--border-glass) !important;
+    color: white;
+}
+
+.card-artisan table {
+    color: var(--shimmer-silver);
+}
+
+.card-artisan thead.bg-light {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: var(--electric-lavender) !important;
+}
+
+.card-artisan tr {
+    border-color: var(--border-glass) !important;
+    transition: 0.2s;
+}
+
+.card-artisan tr:hover {
+    background: rgba(157, 80, 187, 0.05);
+}
+
+/* --- BAKER'S NOTE & ALERTS --- */
+.oven-status {
+    background: rgba(157, 80, 187, 0.1);
+    border-left: 4px solid var(--electric-lavender);
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    color: white;
+}
+
+.oven-status h6 i {
+    color: var(--neon-magenta);
+}
+
+/* Status Badges */
+.badge.bg-warning-subtle {
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--accent-gold) !important;
+    border: 1px solid var(--accent-gold);
+}
+
+.badge.bg-success-subtle {
+    background: rgba(157, 80, 187, 0.1) !important;
+    color: var(--electric-lavender) !important;
+    border: 1px solid var(--electric-lavender);
+}
+
+.badge.bg-danger-subtle {
+    background: rgba(255, 0, 255, 0.1) !important;
+    color: var(--neon-magenta) !important;
+    border: 1px solid var(--neon-magenta);
+}
+
+/* --- BUTTONS --- */
+.btn-sage {
+    background: linear-gradient(45deg, var(--electric-lavender), #b06ab3);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-sage:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(157, 80, 187, 0.4);
+    color: white;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border-glass);
+    color: var(--shimmer-silver);
+}
+
+.btn-outline-secondary:hover {
+    background: var(--glass);
+    border-color: var(--shimmer-silver);
+    color: white;
+}
+
+.btn-outline-dark {
+    border-color: var(--electric-lavender);
+    color: var(--electric-lavender);
+}
+
+.btn-outline-dark:hover {
+    background: var(--electric-lavender);
+    color: white;
+}
+
+/* --- THE ENCHANTED PRODUCT CARD --- */
+.product-card {
+    background: var(--glass) !important; /* Semi-transparent */
+    border: 1px solid var(--border-glass) !important;
+    border-radius: 24px !important;
+    padding: 15px; /* Internal spacing for the 'floating' look */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--electric-lavender) !important;
+    box-shadow: 0 15px 35px rgba(15, 8, 29, 0.8), 
+                0 0 20px rgba(157, 80, 187, 0.1);
+}
+
+/* Image Container - The "Floating" Effect */
+.product-img-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 18px; /* Rounded corners inside the card */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Product Image */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1);
+}
+
+/* Status Badge - Floating over image */
+.badge-active {
+    background: rgba(15, 8, 29, 0.6) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--electric-lavender);
+    color: var(--electric-lavender);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Typography Spacing */
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: var(--electric-lavender);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow: 0 0 10px rgba(157, 80, 187, 0.3);
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--shimmer-silver);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Action Buttons */
+.btn-edit-product {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    color: white;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-edit-product:hover {
+    background: var(--electric-lavender);
+    border-color: var(--electric-lavender);
+    color: white;
+}
+
+/* --- CUSTOM FORM ELEMENTS --- */
+.custom-modal {
+    background: var(--deep-purple) !important;
+    border: 1px solid var(--border-glass) !important;
+    backdrop-filter: blur(25px);
+    border-radius: 24px;
+}
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-glass) !important;
+    color: white !important;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.custom-input:focus {
+    border-color: var(--electric-lavender) !important;
+    box-shadow: 0 0 10px rgba(157, 80, 187, 0.2);
+}
+
+.upload-area {
+    border: 2px dashed var(--border-glass);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-area:hover {
+    border-color: var(--electric-lavender);
+    background: rgba(157, 80, 187, 0.05);
+}
+
+/* --- ORDER WORKFLOW STYLES --- */
+
+/* Filter Pills */
+.status-filter-group {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 50px;
+    display: flex;
+}
+
+.filter-pill {
+    background: transparent;
+    border: none;
+    color: var(--shimmer-silver);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.filter-pill.active {
+    background: var(--electric-lavender);
+    color: white;
+    box-shadow: 0 4px 15px rgba(157, 80, 187, 0.3);
+}
+
+/* Order Card Layout */
+.order-card {
+    padding: 25px !important;
+    border-left: 4px solid var(--border-glass) !important;
+}
+
+.order-row[data-status="new"] .order-card { border-left-color: var(--neon-magenta) !important; }
+.order-row[data-status="oven"] .order-card { border-left-color: var(--accent-gold) !important; }
+.order-row[data-status="ready"] .order-card { border-left-color: #00ffcc !important; }
+
+.order-time-box {
+    min-width: 100px;
+    padding-right: 25px;
+    border-right: 1px solid var(--border-glass);
+}
+
+/* Status Badges */
+.badge-oven { background: rgba(212, 175, 55, 0.1); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+.badge-new { background: rgba(255, 0, 255, 0.1); color: var(--neon-magenta); border: 1px solid var(--neon-magenta); }
+.badge-ready { background: rgba(0, 255, 204, 0.1); color: #00ffcc; border: 1px solid #00ffcc; }
+
+/* Progress Track */
+.progress-track {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 200px;
+}
+
+.progress-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--border-glass);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step {
+    width: 12px;
+    height: 12px;
+    background: var(--deep-purple);
+    border: 2px solid var(--border-glass);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.step.active { border-color: var(--electric-lavender); background: var(--electric-lavender); box-shadow: 0 0 10px var(--electric-lavender); }
+.step.completed { background: var(--electric-lavender); }
+
+/* Glowing Action Button */
+.btn-action-glow {
+    background: rgba(157, 80, 187, 0.1);
+    border: 1px solid var(--electric-lavender);
+    color: var(--electric-lavender);
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-action-glow:hover {
+    background: var(--electric-lavender);
+    color: white;
+    box-shadow: 0 0 20px rgba(157, 80, 187, 0.4);
+}
+
+/* --- PROFILE HEADER STYLES --- */
+.profile-header-card {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-cover {
+    height: 160px;
+    background: linear-gradient(135deg, var(--deep-purple), var(--electric-lavender));
+    opacity: 0.6;
+}
+
+.profile-avatar-wrapper {
+    position: relative;
+    margin-top: -60px;
+}
+
+.profile-main-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    border: 5px solid var(--deep-purple);
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.btn-edit-avatar {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--electric-lavender);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    box-shadow: 0 0 15px var(--electric-lavender);
+}
+
+/* Badge Styling */
+.badge-artisan {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    color: var(--shimmer-silver);
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+}
+
+.text-shimmer {
+    color: var(--shimmer-silver);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Container for the table to enable glassmorphism */
+.table-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* The Table Itself */
+.table {
+    margin-bottom: 0;
+    color:var(--shimmer-silver);;
+}
+
+/* Header Styling */
+.table thead th {
+    border: none;
+    color: var(--electric-lavender);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 20px;
+    background: transparent;
+}
+
+/* Row Styling */
+.table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.002);
+}
+
+.table tbody td {
+    border: none;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+/* Category Label Styling */
+.cat-name {
+    font-weight: 500;
+    color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cat-name::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--electric-lavender);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--electric-lavender);
+}
+
+/* Action Button Styles */
+.btn-action {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background: var(--electric-lavender);
+    border-color: var(--electric-lavender);
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background: #dc3545;
+    border-color: #dc3545;
+}
