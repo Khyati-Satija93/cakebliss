@@ -1,0 +1,563 @@
+/* --- ENCHANTED ADMIN THEME (MATCHED TO USER) --- */
+:root {
+    --deep-bg: #0f081d;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --electric-lavender: #9d50bb;
+    --neon-magenta: #ff00ff;
+    --shimmer-silver: #C0C0C0;
+    --accent-gold: #D4AF37;
+    --text-bright: #ffffff;
+    --text-muted: #C0C0C0;
+    --border-glass: rgba(255, 255, 255, 0.1);
+    
+    /* Dynamic Alias for your existing HTML vars */
+    --gold-glow: var(--accent-gold);
+    --soft-lavender: var(--electric-lavender);
+    --vibrant-lavender: var(--electric-lavender);
+}
+
+body {
+    background-color: var(--deep-bg);
+    color: var(--shimmer-silver);
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-bright);
+}
+
+/* Navbar Customization */
+.admin-navbar {
+    background: rgba(15, 8, 29, 0.85) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    margin: auto 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--electric-lavender) !important;
+    text-shadow: 0 0 10px var(--electric-lavender);
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* --- TOPBAR ELEMENTS --- */
+
+.profile-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--electric-lavender);
+    object-fit: cover;
+}
+
+.admin-profile-dropdown .dropdown-menu {
+    background: #1A142D;
+    border: 1px solid var(--border-glass);
+    padding: 10px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.admin-profile-dropdown .dropdown-item {
+    color: var(--text-muted);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.admin-profile-dropdown .dropdown-item:hover {
+    background: rgba(157, 80, 187, 0.2);
+    color: var(--text-bright);
+}
+
+/* Vibrant Stat Cards */
+.card-stat {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-glass) !important;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    transition: all 0.4s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-8px);
+    border-color: var(--electric-lavender) !important;
+    box-shadow: 0 15px 30px rgba(157, 80, 187, 0.15);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Alert Pills */
+.alert-pill {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--electric-lavender);
+    border: 1px solid var(--electric-lavender);
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+/* Text Colors */
+.text-secondary {
+    color: var(--shimmer-silver) !important;
+    opacity: 0.7;
+}
+
+.text-white { color: #ffffff !important; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--deep-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--electric-lavender);
+    border-radius: 10px;
+}
+/* --- ORDER TRACKING SPECIFIC STYLES --- */
+
+/* Table Container (Glassmorphism) */
+.order-container {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Table Head Styling */
+.table thead th {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--electric-lavender);
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-glass);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Table Body Styling */
+.table tbody td {
+    color: var(--shimmer-silver);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.table tbody tr:hover {
+    background: rgba(157, 80, 187, 0.05); /* Soft Electric Lavender tint */
+}
+
+/* Status Pills with Neon Glows */
+.status-pill {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.st-baking { 
+    background: rgba(157, 80, 187, 0.1); 
+    color: var(--electric-lavender); 
+    border: 1px solid var(--electric-lavender);
+    box-shadow: 0 0 10px rgba(157, 80, 187, 0.2);
+}
+
+.st-delivery { 
+    background: rgba(212, 175, 55, 0.1); 
+    color: var(--accent-gold); 
+    border: 1px solid var(--accent-gold);
+}
+
+.st-refund { 
+    background: rgba(255, 0, 255, 0.1); 
+    color: var(--neon-magenta); 
+    border: 1px solid var(--neon-magenta);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+}
+
+/* Refund Notice Banner */
+.refund-notice {
+    background: rgba(255, 0, 255, 0.05);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+/* Buttons & Inputs */
+.form-select {
+    background-color: var(--glass) !important;
+    color: var(--shimmer-silver) !important;
+    border: 1px solid var(--border-glass) !important;
+}
+
+.btn-outline-dark {
+    border-color: var(--border-glass);
+    color: var(--shimmer-silver);
+}
+
+.btn-outline-dark:hover {
+    background: var(--electric-lavender);
+    border-color: var(--electric-lavender);
+    color: white;
+}
+
+/* Text Overrides for Theme Consistency */
+.text-clay { color: var(--neon-magenta) !important; }
+.text-sage-green { color: var(--electric-lavender) !important; }
+
+
+/* --- PRODUCT MANAGEMENT STYLING --- */
+
+/* Category Pills */
+.category-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background:var(--card-bg);
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border-glass);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.category-pill:hover, .category-pill.active {
+    background: var(--vibrant-lavender);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(123, 66, 245, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Product Cards */
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--soft-lavender);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+/* Custom Buttons within Cards */
+.btn-delete {
+    background: rgba(255, 77, 77, 0.1);
+    color: #FF4D4D;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    border-radius: 8px;
+    padding: 5px 12px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #FF4D4D;
+    color: white;
+}
+
+.text-sage { color: var(--sage-green); }
+
+/* Modal Styling */
+.modal-content {
+    background: #1A142D !important;
+    color: var(--text-bright);
+    border: 1px solid var(--border-glass) !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Makes close button white */
+}
+
+.list-group-item {
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-glass) !important;
+}
+
+/* Specific button for "Take Down" */
+.btn-danger.rounded-pill {
+    background: #FF4D4D;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
+}
+/* --- SELLER MANAGEMENT COMPONENTS --- */
+
+/* Filter Pills & Search */
+.search-bar { 
+    border-radius: 30px; 
+    border: 1px solid var(--border-glass); 
+    padding: 10px 25px; 
+    background: var(--glass); 
+    color: white; 
+    transition: 0.3s;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: var(--electric-lavender);
+    box-shadow: 0 0 15px rgba(157, 80, 187, 0.2);
+}
+
+.filter-btn {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-glass) !important;
+}
+
+.filter-btn.active {
+    background-color: var(--electric-lavender) !important;
+    border-color: var(--electric-lavender) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(157, 80, 187, 0.3);
+}
+
+/* Table Design */
+.table-container { 
+    background: var(--glass); 
+    border-radius: 16px; 
+    border: 1px solid var(--border-glass); 
+    backdrop-filter: blur(10px);
+    overflow: hidden; 
+}
+
+.table thead { 
+    background-color: rgba(255, 255, 255, 0.02); 
+}
+
+.table thead th { 
+    color: var(--electric-lavender); 
+    border: none; 
+    padding: 20px; 
+    text-transform: uppercase; 
+    font-size: 0.75rem; 
+    letter-spacing: 1px;
+}
+
+.table tbody td { 
+    padding: 20px; 
+    border-color: var(--border-glass); 
+    vertical-align: middle; 
+    color: var(--shimmer-silver); 
+}
+
+/* Custom Status Badges */
+.badge-pending { 
+    background: rgba(212, 175, 55, 0.1) !important; 
+    color: var(--accent-gold) !important; 
+    border: 1px solid var(--accent-gold) !important; 
+}
+
+.badge-active { 
+    background: rgba(157, 80, 187, 0.1) !important; 
+    color: var(--electric-lavender) !important; 
+    border: 1px solid var(--electric-lavender) !important; 
+}
+
+/* Actions & Modals */
+.btn-action { 
+    width: 35px; height: 35px; border-radius: 8px; 
+    border: 1px solid var(--border-glass); 
+    background: var(--glass); 
+    color: white; 
+    transition: 0.2s;
+}
+
+.btn-action:hover {
+    border-color: var(--electric-lavender);
+    background: rgba(157, 80, 187, 0.1);
+}
+
+.modal-content {
+    background: var(--deep-purple) !important;
+    border: 1px solid var(--border-glass) !important;
+    backdrop-filter: blur(20px);
+}
+
+.fade-row { 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.hidden-row { 
+    display: none !important; 
+}
+
+/* --- CUSTOMER DIRECTORY STYLES --- */
+
+/* Glass Table Container */
+.user-container {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* User Avatar Styling */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    background: rgba(157, 80, 187, 0.2); /* Lavender Tint */
+    color: var(--electric-lavender);
+    border: 1px solid var(--border-glass);
+    text-shadow: 0 0 5px rgba(157, 80, 187, 0.3);
+}
+
+/* Search Input Customization */
+.search-input {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: white;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--electric-lavender);
+    box-shadow: 0 0 15px rgba(157, 80, 187, 0.2);
+    width: 350px;
+}
+
+/* Status Badges */
+.badge-blocked {
+    background: rgba(255, 0, 255, 0.1) !important;
+    color: var(--neon-magenta) !important;
+    border: 1px solid var(--neon-magenta) !important;
+}
+
+/* Row and Text Overrides */
+.table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.text-dark { color: #ffffff !important; } /* Ensure names are bright */
+
+/* Note Box Styling */
+.bg-white.border-soft {
+    background: rgba(157, 80, 187, 0.05) !important;
+    border: 1px solid var(--border-glass) !important;
+    color: var(--shimmer-silver) !important;
+}
+
+/* --- CATEGORY MANAGEMENT STYLES --- */
+
+/* Category Grid Card */
+.category-card {
+    background: var(--glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--electric-lavender);
+    box-shadow: 0 10px 30px rgba(157, 80, 187, 0.2);
+}
+
+/* Glowing Icon Circle */
+.category-img-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: rgba(157, 80, 187, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--electric-lavender);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+.img-fluid {
+    border: 1px solid rgba(157, 80, 187, 0.3);
+    border-radius: 15px;
+}
+
+.category-card:hover .category-img-wrapper {
+    background: var(--electric-lavender);
+    color: white;
+    box-shadow: 0 0 20px var(--electric-lavender);
+}
+
+/* Category Stats */
+.stat-pill {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    color: var(--shimmer-silver);
+}
+
+/* Floating Action Menu */
+.category-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.category-card:hover .category-actions {
+    opacity: 1;
+}
+
