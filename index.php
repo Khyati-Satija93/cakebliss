@@ -101,10 +101,10 @@
                 p.pastry_name,
                 p.pastry_price,
                 p.pastry_image,
-                c.Cat_name,
+                c.category_name,
                 b.bakery_name
             FROM pastries p
-            JOIN category c ON p.category_id = c.cat_id
+            JOIN category c ON p.category_id = c.category_id
             JOIN bakers b ON p.baker_id = b.id
             WHERE p.pastry_stock = 1
             ORDER BY p.created_at DESC
@@ -133,7 +133,7 @@
                         </h5>
 
                         <p class="text-secondary small mb-1">
-                            Category: <?php echo $row['Cat_name']; ?>
+                            Category: <?php echo $row['category_name']; ?>
                         </p>
 
                         <p class="text-secondary small mb-3">
@@ -220,10 +220,10 @@
             <div class="row g-3">
                 <div class="col-md-4"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400"
                         class="img-fluid rounded-4"></div>
-                <div class="col-md-4"><img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400"
+                <div class="col-md-4"><img src="images/cupcake.jpg"
                         class="img-fluid rounded-4"></div>
-                <div class="col-md-4"><img src="https://images.unsplash.com/photo-1464305795204-6f5bdee7351a?w=400"
-                        class="img-fluid rounded-4"></div>
+                <div class="col-md-4"><img src="images/cake3.jpg"
+                         class="img-fluid rounded-4"></div>
             </div>
         </div>
     </div>
@@ -273,11 +273,11 @@
         <h2 class="playfair text-center mb-5">Gallery of Bliss</h2>
         <div class="row g-3">
             <div class="col-md-4">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1535141123063-3bb61093135c?w=600">
+                <div class="gallery-item"><img src="images/cake4.jpg">
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="gallery-item gallery-tall"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600"></div>
+                <div class="gallery-item"><img src="images/cake5.jpg"></div>
             </div>
             <div class="col-md-4">
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600"></div>
