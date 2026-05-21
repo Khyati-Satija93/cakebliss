@@ -17,10 +17,10 @@ SELECT
     p.pastry_price,
     p.pastry_description,
     p.pastry_image,
-    c.Cat_name,
+    c.category_name,
     b.bakery_name
 FROM pastries p
-LEFT JOIN category c ON p.category_id = c.cat_id
+LEFT JOIN category c ON p.category_id = c.category_id
 LEFT JOIN bakers b ON p.baker_id = b.id
 WHERE p.id = '$pastry_id'
 ";
