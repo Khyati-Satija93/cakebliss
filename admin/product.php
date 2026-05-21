@@ -6,7 +6,9 @@ $cat_query = mysqli_query($conn, "SELECT * FROM category WHERE status = 1");
 
 // Get Pastries
 $selected_cat = isset($_GET['cat_id']) ? mysqli_real_escape_string($conn, $_GET['cat_id']) : null;
-$pastry_sql = "SELECT * FROM pastries";
+$pastry_sql = "SELECT pastries.*, bakers.bakery_name 
+               FROM pastries 
+               JOIN bakers ON pastries.baker_id = bakers.id";
 if ($selected_cat) {
     $pastry_sql .= " WHERE cat_id = '$selected_cat'";
 }
@@ -20,9 +22,9 @@ include 'includes/topbar.php';
     <div class="d-flex gap-2 mb-5 overflow-x-auto pb-2" data-aos="fade-up">
         <a href="index.php" class="category-pill <?php echo !$selected_cat ? 'active' : ''; ?>">All Products</a>
         <?php while ($cat_row = mysqli_fetch_assoc($cat_query)): ?>
-            <a href="?cat_id=<?php echo $cat_row['cat_id']; ?>"
-                class="category-pill <?php echo ($selected_cat == $cat_row['cat_id']) ? 'active' : ''; ?>">
-                <?php echo $cat_row['Cat_name']; ?>
+            <a href="?cat_id=<?php echo $cat_row['category_id']; ?>"
+                class="category-pill <?php echo ($selected_cat == $cat_row['category_id']) ? 'active' : ''; ?>">
+                <?php echo $cat_row['category_name']; ?>
             </a>
         <?php endwhile; ?>
     </div>
@@ -48,7 +50,7 @@ include 'includes/topbar.php';
                                 <h6 class="fw-bold mb-0 product-name"><?php echo $item['pastry_name']; ?></h6>
                                 <span class="text-sage fw-bold small product-price">₹<?php echo $item['pastry_price']; ?></span>
                             </div>
-                            <p class="text-secondary small mb-3">By: <span class="text-clay"><?php echo $item['bakery_owner']; ?></span></p>
+                            <p class="text-secondary small mb-3">By: <span class="text-clay"><?php echo $item['bakery_name']; ?></span></p>
 
                             <div class="d-flex gap-2">
                                 <?php if ($item['pastry_stock'] == 0): ?>
