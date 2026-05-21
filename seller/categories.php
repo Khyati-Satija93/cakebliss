@@ -10,7 +10,7 @@ if (isset($_POST['addCategory'])) {
     $cat_name = $_POST['category_name'];
 
     if (!empty($cat_name)) {
-        $insert = "INSERT INTO Category (Cat_name) VALUES ('$cat_name')";
+        $insert = "INSERT INTO Category (category_name) VALUES ('$cat_name')";
         mysqli_query($conn, $insert);
 
         // Refresh page to show new category
@@ -58,7 +58,7 @@ if (isset($_POST['addCategory'])) {
 
                                 <tbody>
                                     <?php
-                                    $query = "SELECT * FROM Category ORDER BY cat_id DESC";
+                                    $query = "SELECT * FROM Category ORDER BY category_id DESC";
                                     $result = mysqli_query($conn, $query);
 
                                     if (mysqli_num_rows($result) > 0) {
@@ -66,7 +66,7 @@ if (isset($_POST['addCategory'])) {
                                     ?>
                                     <tr>
                                         <td class="ps-4">
-                                            <?php echo $row['Cat_name']; ?>
+                                            <?php echo $row['category_name']; ?>
                                         </td>
 
                                         <td class="text-end pe-4">
