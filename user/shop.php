@@ -86,10 +86,10 @@
                p.pastry_price,
                p.pastry_image,
                p.pastry_description,
-               c.Cat_name,
+               c.category_name,
                b.bakery_name
         FROM pastries p
-        JOIN category c ON p.category_id = c.cat_id
+        JOIN category c ON p.category_id = c.category_id
         JOIN bakers b ON p.baker_id = b.id
         WHERE $whereSQL
         ORDER BY p.created_at DESC
